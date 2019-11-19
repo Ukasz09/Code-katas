@@ -2,7 +2,18 @@ package com.github.Ukasz09.main;
 
 import java.util.Comparator;
 
+/**
+* SortedArr class contains generic type, sorted arr passed by parametrized constructor
+* insertInSortedArr put element to sortedArr and keep the order of elements
+* by using comparator passed in constructor or natural order (comparetTo) from added element
+* if comparator==null
+*
+* @author  Lukasz Gajerski (https://github.com/Ukasz09)
+* @version 1.0
+* @since   2019-11-19
+*/
 public class SortedArr<T extends Comparable<T>> {
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //                                                Fields
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
