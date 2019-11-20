@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.Ukasz09.fizzBuzz.FizzBuzzTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-11-20T17:05:28" hostname="DESKTOP-LDQRO6L" time="0.023">
+  <properties/>
+  <testcase name="shouldReturn0LengthArrForNegative()" classname="com.Ukasz09.fizzBuzz.FizzBuzzTest" time="0.014"/>
+  <testcase name="shouldReturn0LengthArrFor0()" classname="com.Ukasz09.fizzBuzz.FizzBuzzTest" time="0.001"/>
+  <testcase name="shouldReturnFizzFor15()" classname="com.Ukasz09.fizzBuzz.FizzBuzzTest" time="0.002"/>
+  <testcase name="shouldReturnFizzFor3()" classname="com.Ukasz09.fizzBuzz.FizzBuzzTest" time="0.001"/>
+  <testcase name="shouldReturnFizzFor5()" classname="com.Ukasz09.fizzBuzz.FizzBuzzTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
