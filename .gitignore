@@ -20,6 +20,10 @@
 # Gradle
 build/**
 .gradle/**
+.gradle
+*build/
+build
+*.gradle
 
 # CMake
 cmake-build-*/
