@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'com.Ukasz09'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.1.0'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.1.0'
+
+}
+
+test{
+    useJUnitPlatform()
+}
