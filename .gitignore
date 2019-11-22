@@ -18,11 +18,11 @@
 .idea/**/dbnavigator.xml
 
 # Gradle
-build/**
+**/build/
 .gradle/**
 .gradle
-*build/
-build
+#*build/
+#build
 *.gradle
 
 # CMake
