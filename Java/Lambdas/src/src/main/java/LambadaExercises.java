@@ -1,7 +1,12 @@
 package src.main.java;
 
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class LambadaExercises {
     private static final int DEFAULT_LITERALS_QTY = 4;
@@ -61,5 +66,24 @@ public class LambadaExercises {
     public static void printCollection(List<String> collection, String textBeforePrintingCollection) {
         System.out.println("\n" + textBeforePrintingCollection);
         collection.forEach(n -> System.out.print(n + " "));
+    }
+
+    public static <T> boolean equalsWithLambda(T object1, T object2) {
+        Predicate<T> predicate = object1::equals;
+        return predicate.test(object2);
+    }
+
+    public static Human getHumanInstanceByLambda(int age, String name) {
+        BiFunction<Integer, String, Human> humanCreator = Human::new;
+        return humanCreator.apply(age, name);
+    }
+
+    public static Map<String, Integer> wordCounter(String text) {
+        Map<String, Integer> wordCount = new HashMap<>();
+        Arrays.stream(text.split(" "))
+                .map(String::toLowerCase)
+                .collect(Collectors.groupingBy(Function.identity()))
+                .forEach((k,v)->wordCount.put(k,v.size()));
+        return wordCount;
     }
 }
