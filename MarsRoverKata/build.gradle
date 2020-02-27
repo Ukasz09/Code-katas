@@ -10,4 +10,11 @@ dependencies {
     testCompile 'org.testng:testng:6.8.21'
 }
 
-test.useTestNG()
+//test.useTestNG()
+
+test {
+    testLogging {
+        events = ["passed", "failed", "skipped"]
+    }
+    useTestNG()
+}
