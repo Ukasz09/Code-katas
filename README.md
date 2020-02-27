@@ -6,8 +6,9 @@
 
 ## Languages 
 - 🔹 Java
-  - Some of them with:
-    - JUnit5 Jupiter tests
+    - TDD
+    - JUnit5 Jupiter
+    - TestNG
     - Gradle build-automation system
 - 🔹 Scala
 
