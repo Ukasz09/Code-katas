@@ -1,12 +1,22 @@
 package main.java;
 
 public class Main {
-    public static void main(String[] args){
-        println(SimpleCodes.getFibByIndex(0));
-        println(SimpleCodes.getFibByIndexLambda(1));
+    public static void main(String[] args) {
+        System.out.println();
     }
 
-    public static <T> void println(T object){
-        System.out.println(object);
+    private void drawingFunctionalityPresentation() {
+        Drawing.drawHalfTriangleLeftSlope(6);
+        System.out.println("___________________________________________________________________________________________");
+        Drawing.drawHalfTriangleRightSlope(6);
+        System.out.println("___________________________________________________________________________________________");
+        Drawing.drawFullTriangle(4);
+        System.out.println("___________________________________________________________________________________________");
+        Drawing.drawFullTriangle(6);
+        System.out.println("___________________________________________________________________________________________");
+        Drawing.drawTree(5, 3);
+        System.out.println("___________________________________________________________________________________________");
+        Drawing.drawRotatedFullTriangle(6);
     }
+
 }
