@@ -1,5 +1,7 @@
 Remote Controlled Ship Kata
 ===========================
+Exercise from book "Test-driven-java-development" for TDD learning
+https://bitbucket.org/vfarcic/tdd-java-ch04-ship.git
 
 # Work in progress
 
