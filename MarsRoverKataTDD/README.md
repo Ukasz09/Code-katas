@@ -1,8 +1,9 @@
 Remote Controlled Ship Kata
 ===========================
 
-Develop an program that moves a ship around Earth seas.
-Earth is represented as a grid.
+# Work in progress
+
+> Develop an program that moves a ship around Earth seas. Earth is represented as a grid.
 
 Following requirements should be fulfilled one at a time using TDD approach.
 

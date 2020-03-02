@@ -35,7 +35,3 @@ fabric.properties
 #Not used staff and others
 *.lnk
 *.iml
-
-#Others
-Recruitment/
-**/Recruitment
