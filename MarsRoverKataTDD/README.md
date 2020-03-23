@@ -3,8 +3,6 @@ Remote Controlled Ship Kata
 Exercise from book "Test-driven-java-development" for TDD learning
 https://bitbucket.org/vfarcic/tdd-java-ch04-ship.git
 
-# Work in progress
-
 > Develop an program that moves a ship around Earth seas. Earth is represented as a grid.
 
 Following requirements should be fulfilled one at a time using TDD approach.
