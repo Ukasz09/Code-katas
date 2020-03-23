@@ -1,5 +1,6 @@
 package com.packtpublishing.tddjava.ch04ship;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Planet {
@@ -8,7 +9,7 @@ public class Planet {
 
     //----------------------------------------------------------------------------------------------------------------//
     public Planet(Point max) {
-        this.max = max;
+        this(max, new ArrayList<>());
     }
 
     public Planet(Point max, List<Point> obstacles) {
