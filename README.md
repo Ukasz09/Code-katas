@@ -8,6 +8,8 @@ Some code kata exercises and various fun stuff
     - JUnit5 Jupiter
     - TestNG
     - Gradle build-automation system
+    - Multithreads
+    - Client-server
 - 🔹 Scala
 
 ___
