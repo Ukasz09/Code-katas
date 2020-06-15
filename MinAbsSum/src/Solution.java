@@ -1,49 +1,56 @@
 import java.util.*;
 
 public class Solution {
-    private static int minResult = Integer.MAX_VALUE;
+    private static long minResult = Long.MAX_VALUE;
 
-    private static void calcValues(int[] A, int[] S, int endIndex, boolean negativeValue, HashMap<List<Integer>, Integer> calculatedValues) {
-        S[endIndex] = negativeValue ? -1 : 1;
-        if (endIndex + 1 < A.length) {
-            calcValues(A, S, endIndex + 1, true, calculatedValues);
-            calcValues(A, S, endIndex + 1, false, calculatedValues);
-        } else {
-            int result = Math.abs(calcResult(A, S, endIndex, calculatedValues));
+    private static void findMinResult(int[] A, int[] S, int changingIndex, HashMap<String, Long> calcValues) {
+        if (changingIndex >= 0) {
+            S[changingIndex] *= -1;
+            long result = Math.abs(calcResult(A, S, A.length - 1, calcValues));
             if (result < minResult)
                 minResult = result;
+            findMinResult(A, S, changingIndex - 1, calcValues);
+
+            S[changingIndex] *= -1;
+            result = Math.abs(calcResult(A, S, A.length - 1, calcValues));
+            if (result < minResult)
+                minResult = result;
+            findMinResult(A, S, changingIndex - 1, calcValues);
         }
+
     }
 
-    private static int calcResult(int[] A, int[] S, int endIndex, HashMap<List<Integer>, Integer> alreadyCalcVal) {
-        if (endIndex == 0) {
-            int result = A[0] * S[0];
-            alreadyCalcVal.put(new ArrayList<>(Collections.singletonList(result)), result);
-            return result;
-        }
-
-        List<Integer> usedValuesS = new ArrayList<>(endIndex + 1);
-        for (int i = 0; i < endIndex + 1; i++)
-            usedValuesS.add(S[i]);
-        if (alreadyCalcVal.containsKey(usedValuesS))
-            return alreadyCalcVal.get(usedValuesS);
-
-        int result = A[endIndex] * S[endIndex] + calcResult(A, S, endIndex - 1, alreadyCalcVal);
-        alreadyCalcVal.put(usedValuesS, result);
-        return result;
+    private static long calcResult(int[] A, int[] S, int endIndex, HashMap<String, Long> calcValues) {
+        String key = toKey(S, endIndex);
+        if (endIndex == 0)
+            return A[0] * S[0];
+        if (calcValues.containsKey(key))
+            return calcValues.get(key);
+        return A[endIndex] * S[endIndex] + calcResult(A, S, endIndex - 1, calcValues);
     }
 
-    private static int solution(int[] A) {
-        int uniqueValuesQty = (2 + A.length + 1) / 2 * A.length; //arithmetic sequence
-        HashMap<List<Integer>, Integer> calcValues = new HashMap<>(uniqueValuesQty);
-        calcValues(A, new int[A.length], 0, true, calcValues);
-        calcValues(A, new int[A.length], 0, false, calcValues);
+    private static String toKey(int[] values, int endIndex) {
+        StringBuilder key = new StringBuilder(values.length);
+        for (int i = 0; (i < values.length && i <= endIndex); i++)
+            key.append(values[i] == -1 ? '0' : '1');
+        return key.toString();
+    }
+
+
+    private static long solution(int[] A) {
+        int[] S = new int[A.length];
+        Arrays.fill(S, 1);
+        findMinResult(A, S, S.length - 1, new HashMap<>());
         return minResult;
     }
 
     //----------------------------------------------------------------------------------------------------------------//
     public static void main(String[] args) {
+//        int[] test = new int[5000];
+//        Random random = new Random();
+//        for (int i = 0; i < test.length; i++)
+//            test[i] = random.nextInt(201) - 100;
+//        System.out.println(solution(test));
         System.out.println(solution(new int[]{1, 5, 2, -2}));
     }
-
 }
