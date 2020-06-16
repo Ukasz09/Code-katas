@@ -7,12 +7,12 @@ public class OddConcurrencesInArray {
         if (arr.length % 2 == 0)
             throw new InvalidParameterException("Array can not be even size");
         for (int value : arr)
-            if (countAppearanceOfNumberInArr(arr, value) % 2 != 0)
+            if (numberQtyInArr(arr, value) % 2 != 0)
                 return value;
         throw new InvalidParameterException("One number in arr should dont have a pair");
     }
 
-    private static int countAppearanceOfNumberInArr(int[] arr, int searchedNumber) {
+    private static int numberQtyInArr(int[] arr, int searchedNumber) {
         return (int) IntStream.of(arr).filter(numb -> numb == searchedNumber).count();
     }
 
@@ -33,20 +33,16 @@ public class OddConcurrencesInArray {
         throw new InvalidParameterException("One number in arr should dont have a pair");
     }
 
-    public static int findOddNumberEffective(int[] arr) {
-        if (arr.length % 2 == 0)
+    public static int findOddNumberEffective(int[] A) {
+        if (A.length % 2 == 0)
             throw new InvalidParameterException("Array can not be even size");
-        int lastAddedNumber = 0;
         HashSet<Integer> tmp = new HashSet<>();
-        for (int value : arr)
+        for (int value : A)
             if (tmp.contains(value))
                 tmp.remove(value);
-            else {
-                tmp.add(value);
-                lastAddedNumber = value;
-            }
+            else tmp.add(value);
         if (tmp.isEmpty())
             throw new InvalidParameterException("One number in arr should dont have a pair");
-        return lastAddedNumber;
+        return tmp.iterator().next();
     }
 }

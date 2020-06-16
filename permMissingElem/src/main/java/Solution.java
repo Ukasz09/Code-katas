@@ -1,3 +1,5 @@
+import java.util.HashSet;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 class Solution {
@@ -10,16 +12,22 @@ class Solution {
         return 0;
     }
 
-    public int getMissingPermEfficientImplementation(int[] A) {
-        long dataSize=A.length;
+    public int getMissingPermEfficientArithmeticSeries(int[] A) {
+        long dataSize = A.length;
         long totalSumOfArithmeticSeries = ((dataSize + 2) * (dataSize + 1)) / 2;
         long actualSum = 0;
         for (int value : A) actualSum += value;
         return (int) (totalSumOfArithmeticSeries - actualSum);
     }
 
-    public int getMissingPermEfficientWithLambda(int[] A) {
-        long dataSize=A.length;
+    public int getMissingPermHashSet(int[] A) {
+        HashSet<Integer> set = IntStream.rangeClosed(1, A.length + 1).boxed().collect(Collectors.toCollection(HashSet::new));
+        for (Integer numb : A) set.remove(numb);
+        return set.iterator().next();
+    }
+
+    public int getMissingPermWithLambda(int[] A) {
+        long dataSize = A.length;
         long totalSumOfArithmeticSeries = ((dataSize + 2) * (dataSize + 1)) / 2;
         return (int) (totalSumOfArithmeticSeries - IntStream.of(A).sum());
     }

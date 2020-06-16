@@ -4,11 +4,10 @@ import java.security.InvalidParameterException;
 
 public class BinaryGaps {
 
-    public static int getMaxGap(int number) {
-        if (number <= 0)
+    public int solution(int N) {
+        if (N <= 0)
             throw new InvalidParameterException("Number can not be negative or zero");
-
-        String binary = Integer.toBinaryString(number);
+        String binary = Integer.toBinaryString(N);
         int maxGap = 0;
         int actualGap = 0;
         for (int i = 0; i < binary.length(); i++)
