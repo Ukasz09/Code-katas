@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Solution {
+public class RecursiveSolution {
     private static long minResult = Long.MAX_VALUE;
 
     private static void findMinResult(int[] A, int[] S, int changingIndex, HashMap<String, Long> calcValues) {
@@ -17,7 +17,6 @@ public class Solution {
                 minResult = result;
             findMinResult(A, S, changingIndex - 1, calcValues);
         }
-
     }
 
     private static long calcResult(int[] A, int[] S, int endIndex, HashMap<String, Long> calcValues) {
