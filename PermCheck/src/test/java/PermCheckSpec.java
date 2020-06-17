@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class PermCheckSpec {
 
     @Nested
@@ -38,7 +36,7 @@ public class PermCheckSpec {
         @Test
         void givenArrWithEachElementOnceRepeatWhenNoPermutationThenFalse() {
             int arr[] = {4, 1, 3};
-            assertFalse(PermCheck.isPermutationEfficientImplementation(arr));
+            assertFalse(PermCheck.isPermutationMiddleAverage(arr));
 
             arr = new int[]{4, 1, 2, 3, 6};
             assertFalse(PermCheck.isPermutationSlowImplementation(arr));
@@ -47,15 +45,15 @@ public class PermCheckSpec {
         @Test
         void whenArrWithEachElementMoreThanOnceRepeatThenFalse() {
             int arr[] = {4, 1, 2, 2, 3};
-            assertFalse(PermCheck.isPermutationEfficientImplementation(arr));
+            assertFalse(PermCheck.isPermutationMiddleAverage(arr));
         }
 
         @Test
         void givenArrWithEachElementOnceRepeatWhenPermutationThenTrue() {
             int arr[] = {4, 1, 3, 2};
-            assertTrue(PermCheck.isPermutationEfficientImplementation(arr));
+            assertTrue(PermCheck.isPermutationMiddleAverage(arr));
             arr = new int[]{4, 1, 3, 2, 9, 8, 7, 5, 6};
-            assertTrue(PermCheck.isPermutationEfficientImplementation(arr));
+            assertTrue(PermCheck.isPermutationMiddleAverage(arr));
         }
     }
 
